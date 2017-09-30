@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="utf-8" />
+   <title>菜单</title>
+   <meta name="author" content="www.frebsite.nl" />
+   <meta name="viewport" content="width=device-width initial-scale=1.0 maximum-scale=1.0 user-scalable=yes" />
+
+   <link rel="stylesheet" href="bootstrap3.3.7/css/bootstrap.css">
+   <link rel="stylesheet" href="css/demo.css?v=6.1.7" />
+   <link rel="stylesheet" href="css/hamburgers.css" />
+   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+   <link rel="stylesheet" href="jquery.mmenu/jquery.mmenu.all.css?v=6.1.7" />
+   <link rel="stylesheet" href="jquery.mhead/jquery.mhead.css?v=6.1.7" />
+
+
+   <script src="angular.min.js"></script>
+   <script src="jquery/jquery-3.2.1.js"></script>
+   <script src="bootstrap3.3.7/js/bootstrap.js"></script>
+   <script src="jquery.mmenu/jquery.mmenu.all.js?v=6.1.7"></script>
+   <script src="jquery.mhead/jquery.mhead.js?v=6.1.7"></script>
+   <script src="main.js"></script>
+
+   <style type="text/css">
+      .mm-menu.mm-offcanvas.mm-fullscreen.mm-bottom {
+         height: calc( 100% - 40px );
+      }
+      .mm-menu.mm-theme-black {
+         background: orange;
+      }
+      .mm-menu  .mm-navbar-size-2 {
+         text-align: center;
+         position: relative;
+         border-bottom: none;
+      }
+      .mm-menu  .mm-navbar-size-2:before {
+         content: "";
+         display: inline-block;
+         vertical-align: middle;
+         height: 100%;
+         width: 1px;
+      }
+      .mm-menu .mm-navbar-size-2 > * {
+         display: inline-block;
+         vertical-align: middle;
+         float: none;
+      }
+      .mm-menu .mm-navbar-size-2 a
+      {
+         border: 1px solid rgba(255, 255, 255, 0.6);
+      }
+      .mm-menu .mm-navbar-size-2 img {
+         width: 100px;
+         padding: 10px;
+         margin: 0 10px;
+      }
+      .mm-menu .mm-navbar-size-2 a {
+         border-radius: 40px;
+         color: rgba(255, 255, 255, 0.8) !important;
+         font-size: 16px !important;
+         line-height: 40px;
+         width: 40px;
+         height: 40px;
+         padding: 0;
+      }
+      .mm-menu .mm-navbar-size-2 a:hover {
+         border-color: #fff;
+         color: #fff !important;
+      }
+      .mm-menu .mm-listview {
+         text-transform: uppercase;
+         font-size: 12px;
+      }
+      .mm-menu .mm-listview li:last-child:after {
+         content: none;
+         display: none;
+      }
+
+      .mm-menu .mm-listview a,
+      .mm-menu .mm-listview span {
+         color: rgba(255, 255, 255, 0.6);
+         text-align: center;
+         padding-right: 20px !important;
+      }
+      .mm-menu .mm-listview a:hover,
+      .mm-menu .mm-listview a:hover + span {
+         color: #fff;
+      }
+      .mm-menu .mm-panels > .mm-panel:after {
+         content: none;
+         display: none;
+      }
+      .mm-menu .mm-panels > .mm-panel > .mm-listview {
+         margin: 0;
+      }
+   </style>
+
+
+   <style type="text/css">
+      .mm-menu.mm-theme-black {
+         background: #f99;
+         background: linear-gradient(135deg, #f99 10%,#c6f 90%);
+      }
+      .mm-menu > .mm-navbars-top
+      {
+         background: rgba( 255, 255, 255, 0.3 );
+      }
+      .mm-panels,
+      .mm-panels > .mm-panel {
+         background: none;
+      }
+      .mm-navbar.mm-hasbtns {
+         border: none;
+         padding-left: 0 !important;
+      }
+      .mm-search {
+         height: 60px;
+         padding: 30px 30px 0 30px;
+         position: relative;
+      }
+      .mm-search input {
+         background: none !important;
+         border-radius: 0 !important;
+         color: #fff !important;
+         height: 45px;
+      }
+      .mm-prev,
+      .mm-close {
+         margin-top: 22px;
+      }
+      .mm-prev::before {
+         left: 18px;
+      }
+      .mm-panels > .mm-panel::before
+      {
+         height: 40px;
+      }
+      .mm-listview li > a,
+      .mm-listview li > span {
+         color: rgba( 255, 255, 255, 0.8 );
+      }
+      .mm-listview > li > a,
+      .mm-listview > li > span {
+         font-size: 16px;
+         padding: 15px 10px 15px 40px;
+      }
+      .mm-listview .mm-divider {
+         text-indent: 40px;
+      }
+      .mm-listview .mm-inset {
+         padding-left: 50px;
+      }
+      .mm-listview .mm-inset a:hover {
+         text-decoration: underline;
+      }
+   </style>
+</head>
+<body>
+
+<div ng-app="BookApp">
+   <div ng-controller="MenuController" >
+      <div id="page">
+         <div class="mh-head ">
+				<span class="mh-btns-left">
+					<a class="mh-hamburger" href="#menu"></a>
+				</span>
+            <span class="mh-text">菜单</span>
+				<span class="mh-btns-right">
+					<a class="glyphicon glyphicon-info-sign" href="#info"></a>
+				</span>
+         </div>
+         <div class="content container">
+                  <div class="row" ng-repeat="item in products" style="opacity: 0.9; margin-top: 20px;">
+
+                     <div ng-hide="!$even">
+                        <div class="caption col-xs-6" >
+                           <h4 class="img-desc-title">{{item.name}}</h4>
+                           <p class="img-desc-title" style="text-align: left">很长很长很长的描述很长长很长很长的描述</p>
+                           <h5 class="img-desc-title">price:{{item.price}} 元 / 杯</h5>
+                        </div>
+                        <div class="col-xs-5">
+                           <img src="img/naigai.jpg"
+                                alt="{{item.name}}" style="height: 150px;width: 150px;"  class="img-circle">
+                        </div>
+                     </div>
+
+                     <div ng-hide="$even">
+                        <div class="col-xs-5">
+                           <img src="img/naigai2.jpg"
+                                alt="{{item.name}}" style="height: 150px;width: 150px;"  class="img-circle">
+                        </div>
+                        <div class="caption col-xs-6" style="margin-left: 30px;" >
+                           <h4 class="img-desc-title">{{item.name}}</h4>
+                           <p class="img-desc-title" style="text-align: left;">很长很长很长的描述很很长很长的描述</p>
+                           <h5 class="img-desc-title">price:{{item.price}} 元 / 杯</h5>
+                        </div>
+                     </div>
+                     </div>
+
+         </div>
+      </div>
+      <nav id="menu">
+         <ul>
+            <li ng-repeat="item in menuTitles"><a href="#/">{{item}}</a></li>
+         </ul>
+      </nav>
+      <nav id="info">
+         <ul>
+            <li><a href="#/">Home</a></li>
+            <li><a href="#/work">Our work</a></li>
+            <li><span>About us</span>
+               <ul>
+                  <li><a href="#/about/history">History</a></li>
+                  <li><span>The team</span>
+                     <ul>
+                        <li><a href="#/about/team/management">Management</a></li>
+                        <li><a href="#/about/team/sales">Sales</a></li>
+                        <li><a href="#/about/team/development">Development</a></li>
+                     </ul>
+                  </li>
+               </ul>
+            </li>
+            <li><span>Services</span>
+               <ul>
+                  <li><a href="#/services/design">Design</a></li>
+                  <li><a href="#/services/development">Development</a></li>
+                  <li><a href="#/services/marketing">Marketing</a></li>
+               </ul>
+            </li>
+            <li><a href="#/contact">Contact</a></li>
+         </ul>
+      </nav>
+      <img class="img-circle" id="go-top" src="img/top.png" style="height:40px;position:fixed;right:0;bottom:0;margin-bottom: 50%;margin-right: 5px;" ng-click="goTop()"/>
+   </div>
+</div>
+</body>
+</html>

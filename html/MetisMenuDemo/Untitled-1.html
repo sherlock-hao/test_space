@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+	<link href="font-awesome.min.css" rel="stylesheet" type="text/css"> 
+	<link href="jquery.mmenu.all.custom.css" rel="stylesheet" type="text/css"> 
+	<link href="bootstrap.min.css" rel="stylesheet">
+	<script src="jquery.min.js" type="text/javascript"></script>  
+	<script src="jquery.mmenu.min.all.js"></script>
+	<script src="bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+	   $(document).ready(function() {
+	      $("#main_menu").mmenu({
+	    	  counters: true,
+	    	  classes: "mm-light mm-zoom-menu mm-zoom-panels",
+	    	  searchfield: true,
+	    	  footer: {
+	    		  add: true,
+	    		  content: "Powered by Real @2014"
+	    	  }
+	      });
+	   });
+	</script>    
+</head>
+
+<body>
+	<nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+    <div class="navbar-head">
+    	<div class="navbar-brand">
+    		<a href="#main_menu">
+    		点击
+    		</a>
+    	</div>
+    </div>
+    <!-- /.navbar-header -->
+
+
+	    <ul class="nav navbar-top-links navbar-right">
+	        <li>
+	            aaa
+	        </li>
+	        <li class="dropdown">
+	            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+	               aaa
+	            </a>
+	            <ul class="dropdown-menu dropdown-user">
+	                <li>111
+	                </li>
+	                <li class="divider"></li>
+	                <li>
+	                	222
+	                </li>
+	            </ul>
+	            <!-- /.dropdown-user -->
+	        </li>  
+	        <!-- /.dropdown -->
+	    </ul>
+    	<!-- /.navbar-top-links -->
+</nav>
+
+<nav id="main_menu"  class="noprint">
+   <ul>
+      <li>
+      	<span>1111</span>
+      	<div>
+      		<ul>
+      				
+				<li>1</li>
+
+				<li>2</li>
+
+				<li>3</li>
+	
+      		</ul>
+      	</div>
+      </li>
+      <li>
+      	<span>222</span>
+      	<div>
+      		<ul>
+				<li>22</li>
+      		</ul>
+      	</div>
+      </li>
+
+      <li>
+      	<span>3</span>
+      	<div>
+      		<ul>
+ 
+      			<li>1</li>
+
+               <li>2</li>
+
+				<li>3</li>
+
+				<li>4</li>
+
+      		</ul>
+      	</div>
+      </li>
+       
+   </ul>
+</nav>
+</body>
+</html>

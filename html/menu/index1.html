@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<style>
+    html,body,.box{
+        height:100%;
+    }
+    body{
+        margin:0;
+
+    }
+    .box{
+        display:-webkit-flex;
+        -webkit-flex-direction: column;
+        display:flex;
+        flex-direction:column;
+    }
+    .box .child{
+        height:40px;
+        background:#f00;
+    }
+    .box .child1{
+        flex:1;
+        background:#0f0
+    }
+</style>
+<div class="box">
+    <div class="child">child</div>
+    <div class="child1">child1</div>
+</div>
+</body>
+</html>
