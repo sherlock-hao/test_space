@@ -172,8 +172,10 @@
          <div class="content container">
                   <div class="row" ng-repeat="item in products" style="opacity: 0.9; margin-top: 20px;">
 
+                     <hr/>
+
                      <div ng-hide="!$even">
-                        <div class="caption col-xs-6" >
+                        <div class="caption col-xs-6" style="margin-top: 10px;" >
                            <h4 class="img-desc-title">{{item.name}}</h4>
                            <p class="img-desc-title" style="text-align: left">很长很长很长的描述很长长很长很长的描述</p>
                            <h5 class="img-desc-title">price:{{item.price}} 元 / 杯</h5>
@@ -189,12 +191,13 @@
                            <img src="img/naigai2.jpg"
                                 alt="{{item.name}}" style="height: 150px;width: 150px;"  class="img-circle">
                         </div>
-                        <div class="caption col-xs-6" style="margin-left: 30px;" >
+                        <div class="caption col-xs-6" style="margin-left: 30px;margin-top: 10px" >
                            <h4 class="img-desc-title">{{item.name}}</h4>
                            <p class="img-desc-title" style="text-align: left;">很长很长很长的描述很很长很长的描述</p>
                            <h5 class="img-desc-title">price:{{item.price}} 元 / 杯</h5>
                         </div>
                      </div>
+
                      </div>
 
          </div>

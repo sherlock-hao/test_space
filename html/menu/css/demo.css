@@ -120,7 +120,6 @@ body .mh-text {
 }
 
 .content {
-    margin-top: 20px;
     box-sizing: border-box;
     position: relative;
     overflow:auto;
