@@ -48,7 +48,7 @@ angular.module('BookApp', [])
                     height 	: 2,
                     content : [
                         '<a href="#/" class="fa fa-phone"></a>',
-                        '<img src="img/avatar.jpg" class="img-circle" />',
+                        '<img src="img/baobao.jpeg" class="img-circle" />',
                         '<a href="#/" class="fa fa-envelope"></a>'
                     ]
                 }, {
